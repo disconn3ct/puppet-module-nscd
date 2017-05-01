@@ -572,7 +572,7 @@ class nscd (
     $package_adminfile_real = $package_adminfile
   }
 
-  if !is_string($package_adminfile_real) {
+  if $package_adminfile_real != undef and !is_string($package_adminfile_real) {
     fail('nscd::package_adminfile must be a string.')
   }
 
@@ -592,7 +592,7 @@ class nscd (
     $package_source_real = $package_source
   }
 
-  if !is_string($package_source_real) {
+  if $package_source_real != undef and !is_string($package_source_real) {
     fail('nscd::package_source must be a string.')
   }
 
